@@ -235,5 +235,38 @@ public class TicTacToe {
 		System.out.println("\n\t"+player + " player won!");
 		System.exit(0);
 	}
+	
+	void playGame(){
+		System.out.println("\t Tic Tac Toe");
+		drawBoard();//drawing a board
+		fillBoard();//filling the fields of the board
+		
+		//outer loop that iterates until all the fields are filled or someone wins
+		do {
+			boolean isOk = false;
+			int[] playersPosition = new int[2];//position where number of row and column will be stored
+			//looping until player enters a position that isn't taken
+			while (!isOk) {
+				isOk = true;
+				playersPosition = playersMove(); //number of raw and column where player wants to put his mark
+				if (isTaken(playersPosition)) {
+					isOk = false;
+				}
+			}
+			//placing a players mark
+			placeMark(playersPosition);
+			//drawing a board with changes
+			drawBoard();
+			//check if we have a winner
+			if(checkForWin()) {
+				whoWon();
+			}
+			//change a player
+			changePlayer();
+
+		} while (!isBoardFull());
+		//print a message if there is a draw
+		System.out.println("We have a draw.");
+	}
 
 }

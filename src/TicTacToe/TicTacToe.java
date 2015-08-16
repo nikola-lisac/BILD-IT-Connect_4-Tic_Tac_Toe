@@ -1,4 +1,4 @@
-package Klase;
+package TicTacToe;
 import java.util.Scanner;
 /**
  * Classic Tic Tac Toe game

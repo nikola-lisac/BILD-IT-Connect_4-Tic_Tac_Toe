@@ -1,6 +1,6 @@
-package Klase;
+package TicTacToe;
 
-public class TicTacToeGame {
+public class NewGame {
 
 	public static void main(String[] args) {
 		TicTacToe game = new TicTacToe();//new instance
